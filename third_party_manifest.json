@@ -1,19 +1,19 @@
 {
-  "lastUpdated": "Tue Mar 25 2025 14:59:53 GMT-0400 (Eastern Daylight Time)",
+  "lastUpdated": "Wed Mar 26 2025 11:05:08 GMT-0400 (Eastern Daylight Time)",
   "projectName": "New Relic Reports Builder",
   "projectUrl": "https://github.com/newrelic/nr-labs-reports-builder",
   "includeOptDeps": false,
   "includeDev": true,
   "dependencies": {
-    "@newrelic/nr-labs-components@1.23.7": {
+    "@newrelic/nr-labs-components@1.23.8": {
       "name": "@newrelic/nr-labs-components",
-      "version": "1.23.7",
-      "range": "^1.23.7",
+      "version": "1.23.8",
+      "range": "^1.23.8",
       "licenses": "Apache-2.0",
       "repoUrl": "https://github.com/newrelic/nr-labs-components",
-      "versionedRepoUrl": "https://github.com/newrelic/nr-labs-components/tree/v1.23.7",
+      "versionedRepoUrl": "https://github.com/newrelic/nr-labs-components/tree/v1.23.8",
       "licenseFile": "node_modules/@newrelic/nr-labs-components/LICENSE",
-      "licenseUrl": "https://github.com/newrelic/nr-labs-components/blob/v1.23.7/LICENSE",
+      "licenseUrl": "https://github.com/newrelic/nr-labs-components/blob/v1.23.8/LICENSE",
       "licenseTextSource": "file",
       "publisher": "New Relic Labs - Viz",
       "url": "https://github.com/orgs/newrelic/teams/labs-viz"
@@ -29,39 +29,39 @@
       "licenseUrl": "https://github.com/facebook/prop-types/blob/v15.7.2/LICENSE",
       "licenseTextSource": "file"
     },
-    "react-dom@17.0.2": {
+    "react-dom@18.3.1": {
       "name": "react-dom",
-      "version": "17.0.2",
-      "range": "17.0.2",
+      "version": "18.3.1",
+      "range": "^18.3.1",
       "licenses": "MIT",
       "repoUrl": "https://github.com/facebook/react",
-      "versionedRepoUrl": "https://github.com/facebook/react/tree/v17.0.2",
+      "versionedRepoUrl": "https://github.com/facebook/react/tree/v18.3.1",
       "licenseFile": "node_modules/react-dom/LICENSE",
-      "licenseUrl": "https://github.com/facebook/react/blob/v17.0.2/LICENSE",
+      "licenseUrl": "https://github.com/facebook/react/blob/v18.3.1/LICENSE",
       "licenseTextSource": "file"
     },
-    "react-timezone-select@3.2.8": {
+    "react-timezone-select@2.1.5": {
       "name": "react-timezone-select",
-      "version": "3.2.8",
-      "range": "^3.2.8",
+      "version": "2.1.5",
+      "range": "^2.1.5",
       "licenses": "MIT",
       "repoUrl": "https://github.com/ndom91/react-timezone-select",
-      "versionedRepoUrl": "https://github.com/ndom91/react-timezone-select/tree/v3.2.8",
+      "versionedRepoUrl": "https://github.com/ndom91/react-timezone-select/tree/v2.1.5",
       "licenseFile": "node_modules/react-timezone-select/LICENSE",
-      "licenseUrl": "https://github.com/ndom91/react-timezone-select/blob/v3.2.8/LICENSE",
+      "licenseUrl": "https://github.com/ndom91/react-timezone-select/blob/v2.1.5/LICENSE",
       "licenseTextSource": "file",
       "publisher": "Nico Domino",
       "email": "yo@ndo.dev"
     },
-    "react@17.0.2": {
+    "react@18.3.1": {
       "name": "react",
-      "version": "17.0.2",
-      "range": "17.0.2",
+      "version": "18.3.1",
+      "range": "^18.3.1",
       "licenses": "MIT",
       "repoUrl": "https://github.com/facebook/react",
-      "versionedRepoUrl": "https://github.com/facebook/react/tree/v17.0.2",
+      "versionedRepoUrl": "https://github.com/facebook/react/tree/v18.3.1",
       "licenseFile": "node_modules/react/LICENSE",
-      "licenseUrl": "https://github.com/facebook/react/blob/v17.0.2/LICENSE",
+      "licenseUrl": "https://github.com/facebook/react/blob/v18.3.1/LICENSE",
       "licenseTextSource": "file"
     },
     "uuid@9.0.1": {
@@ -142,28 +142,28 @@
       "publisher": "The Babel Team",
       "url": "https://babel.dev/team"
     },
-    "@semantic-release/changelog@5.0.1": {
+    "@semantic-release/changelog@6.0.3": {
       "name": "@semantic-release/changelog",
-      "version": "5.0.1",
-      "range": "^5.0.1",
+      "version": "6.0.3",
+      "range": "^6.0.3",
       "licenses": "MIT",
       "repoUrl": "https://github.com/semantic-release/changelog",
-      "versionedRepoUrl": "https://github.com/semantic-release/changelog/tree/v5.0.1",
+      "versionedRepoUrl": "https://github.com/semantic-release/changelog/tree/v6.0.3",
       "licenseFile": "node_modules/@semantic-release/changelog/LICENSE",
-      "licenseUrl": "https://github.com/semantic-release/changelog/blob/v5.0.1/LICENSE",
+      "licenseUrl": "https://github.com/semantic-release/changelog/blob/v6.0.3/LICENSE",
       "licenseTextSource": "file",
       "publisher": "Pierre Vanduynslager",
       "url": "https://github.com/pvdlg"
     },
-    "@semantic-release/git@9.0.1": {
+    "@semantic-release/git@10.0.1": {
       "name": "@semantic-release/git",
-      "version": "9.0.1",
-      "range": "^9.0.0",
+      "version": "10.0.1",
+      "range": "^10.0.1",
       "licenses": "MIT",
       "repoUrl": "https://github.com/semantic-release/git",
-      "versionedRepoUrl": "https://github.com/semantic-release/git/tree/v9.0.1",
+      "versionedRepoUrl": "https://github.com/semantic-release/git/tree/v10.0.1",
       "licenseFile": "node_modules/@semantic-release/git/LICENSE",
-      "licenseUrl": "https://github.com/semantic-release/git/blob/v9.0.1/LICENSE",
+      "licenseUrl": "https://github.com/semantic-release/git/blob/v10.0.1/LICENSE",
       "licenseTextSource": "file",
       "publisher": "Pierre Vanduynslager",
       "url": "https://github.com/pvdlg"
