@@ -1,0 +1,51 @@
+{
+  "name": "nr-labs-reports-builder",
+  "version": "4.0.0",
+  "description": "New Relic Reports Builder is used to build reports for use with New Relic Reports.",
+  "scripts": {
+    "start": "nr1 nerdpack:serve",
+    "eslint-check": "eslint nerdlets/ src/",
+    "eslint-fix": "eslint nerdlets/ src/ --fix",
+    "test": "exit 0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not ie < 11",
+    "not dead"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/newrelic/nr-labs-reports-builder.git"
+  },
+  "author": "sdewitt@newrelic.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/newrelic/nr-labs-reports-builder/issues"
+  },
+  "homepage": "https://github.com/newrelic/nr-labs-reports-builder#readme",
+  "dependencies": {
+    "@newrelic/nr-labs-components": "^1.23.8",
+    "prop-types": "15.7.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-timezone-select": "^2.1.5",
+    "uuid": "^9.0.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "^2.8.6"
+  }
+}
