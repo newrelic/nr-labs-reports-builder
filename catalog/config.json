@@ -1,5 +1,5 @@
 {
-  "tagline": "Build scheduled dashboard and query reports",
+  "tagline": "Build scheduled reports",
   "details": "New Relic Reports Builder is used to build reports for use with New Relic Reports.",
   "categoryTerms": [],
   "keywords": ["scheduled", "reports", "report", "dashboard", "query", "nrql"],
