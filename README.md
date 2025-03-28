@@ -139,7 +139,7 @@ From this screen, the following actions are available.
   in the report list to open the report context menu and then click on
   "View history".
 
-![New Relic Reports Builder report list](./catalog/screenshots/report-list.png)
+![New Relic Reports Builder report list](./docs/screenshots/report-list.png)
 
 ## Reports Builder Schedule List
 
@@ -183,7 +183,7 @@ automatically be rescheduled if the frequency in the schedule is changed and
 changes to the list of channels associated with the schedule or the settings of
 those channels will automatically be picked up on the next scheduled run.
 
-![New Relic Reports Builder schedule list](./catalog/screenshots/schedule-list.png)
+![New Relic Reports Builder schedule list](./docs/screenshots/schedule-list.png)
 
 ## Reports Builder Channel List
 
@@ -221,7 +221,7 @@ will automatically update the channel for all schedules it is associated with.
 Reports associated with schedules that use the channel will pick up the changes
 to the channel on the next run.
 
-![New Relic Reports Builder channel list](./catalog/screenshots/channel-list.png)
+![New Relic Reports Builder channel list](./docs/screenshots/channel-list.png)
 
 ## Reports Builder Edit Report Screen
 
@@ -522,7 +522,7 @@ that triggered the report.
 **NOTE:** Despite the wording of the label "Report outputs published for the
 following schedules", a run is only ever triggered by a single schedule.
 
-![New Relic Reports Builder report history list](./catalog/screenshots/history-list.png)
+![New Relic Reports Builder report history list](./docs/screenshots/history-list.png)
 
 ## Reports Builder Dashboard Picker
 
@@ -550,7 +550,7 @@ dashboard table will be updated to reflect the selected dashboards.
 
 To discard changes, click on the button labeled "Cancel".
 
-![New Relic Reports Builder dashboard picker](./catalog/screenshots/dashboard-picker.png)
+![New Relic Reports Builder dashboard picker](./docs/screenshots/dashboard-picker.png)
 
 ## Reports Builder Schedule Picker
 
@@ -628,4 +628,4 @@ a message indicating that the expression is custom followed by the CRON
 expression, for example "This report will run as specified by the custom CRON
 expression "*/5 * * * ? *"".
 
-![New Relic Reports Builder schedule picker](./catalog/screenshots/schedule-picker.png)
+![New Relic Reports Builder schedule picker](./docs/screenshots/schedule-picker.png)

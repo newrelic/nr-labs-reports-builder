@@ -7,7 +7,7 @@ to provide a full end-to-end scheduled reporting solution.
 ## Issues / Enhancement Requests
 
 Issues and enhancement requests can be submitted in the
-[Issues tab of the New Relic Reports repository](https://github.com/newrelic/nr-reports/issues).
+[Issues tab of the New Relic Reports Builder repository](https://github.com/newrelic/nr-labs-reports-builder/issues).
 Please search for and review the existing open issues before submitting a new
 issue.
 
@@ -43,9 +43,9 @@ reporting it to New Relic through [HackerOne](https://hackerone.com/newrelic).
 
 ## License
 
-New Relic Reports is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt)
+New Relic Reports Builder is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt)
 License.
 
-New Relic Reports also uses source code from third-party libraries. You can
-find full details on which libraries are used and the terms under which they
+New Relic Reports Builder also uses source code from third-party libraries. You
+can find full details on which libraries are used and the terms under which they
 are licensed in the third-party notices document.
