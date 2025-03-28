@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "nr-labs-reports-builder",
   "version": "4.0.0",
   "description": "New Relic Reports Builder is used to build reports for use with New Relic Reports.",
