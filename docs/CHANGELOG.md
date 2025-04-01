@@ -1,3 +1,10 @@
+# [4.2.0](https://github.com/newrelic/nr-labs-reports-builder/compare/v4.1.0...v4.2.0) (2025-04-01)
+
+
+### Features
+
+* add help modal ([38b8866](https://github.com/newrelic/nr-labs-reports-builder/commit/38b8866ed2aea01552e234d5a7ed2f05e9cd206c))
+
 # [4.1.0](https://github.com/newrelic/nr-labs-reports-builder/compare/v4.0.1...v4.1.0) (2025-04-01)
 
 
