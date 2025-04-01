@@ -51,3 +51,9 @@ export function newChannel() {
 export function newChannelMetadata() {
   return {}
 }
+
+export function newUserSettings() {
+  return {
+    seenSystemRequirements: false,
+  }
+}

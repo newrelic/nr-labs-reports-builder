@@ -15,19 +15,29 @@ function createModalRoot() {
   return modalRoot
 }
 
-export default function OverlayView({ children, onClose }) {
+function Overlay({
+  children,
+  showCancel = true,
+  loading = false,
+  alignButtons = Overlay.ALIGN_BUTTONS.CENTER,
+  onSubmit,
+  onCancel,
+}) {
   const modalRoot = useMemo(() => createModalRoot(), []),
     overlayContentRef = useRef(),
+    handleSubmit = useCallback(() => {
+      onSubmit()
+    }, [onSubmit]),
     handleCancel = useCallback(() => {
-      onClose()
-    }, [onClose]),
+      onCancel()
+    }, [onCancel]),
     handleKeyup = useCallback(
       (evt) => {
         if (evt.code === 'Escape') {
-          onClose()
+          onCancel()
         }
       },
-      [onClose]
+      [onCancel]
     ),
     handleClicksOutsideComponent = useCallback(
       (evt) => {
@@ -35,10 +45,10 @@ export default function OverlayView({ children, onClose }) {
           overlayContentRef &&
           !overlayContentRef.current.contains(evt.target)
         ) {
-          onClose()
+          onCancel()
         }
       },
-      [overlayContentRef, onClose, contentWidth]
+      [overlayContentRef, onCancel, contentWidth]
     ),
     setupHandlers = useCallback(() => {
       // Delay here so that we don't capture button click events that may have
@@ -68,18 +78,23 @@ export default function OverlayView({ children, onClose }) {
         <Stack
           spacingType={[Stack.SPACING_TYPE.NONE]}
           directionType={Stack.DIRECTION_TYPE.VERTICAL}
+          horizontalType={Stack.HORIZONTAL_TYPE.FILL}
           fullWidth
         >
-          <StackItem>{children}</StackItem>
+          <StackItem grow>{children}</StackItem>
 
-          <StackItem>
+          <StackItem grow>
             <Stack
+              className={`align-buttons-${alignButtons}`}
               spacingType={[Stack.SPACING_TYPE.LARGE, Stack.SPACING_TYPE.NONE]}
+              directionType={Stack.DIRECTION_TYPE.HORIZONTAL}
+              fullWidth
             >
               <StackItem>
                 <Button
-                  //onClick={handleSubmit}
+                  onClick={handleSubmit}
                   type={Button.TYPE.PRIMARY}
+                  loading={loading}
                   spacingType={[
                     Button.SPACING_TYPE.NONE,
                     Button.SPACING_TYPE.SMALL,
@@ -89,18 +104,20 @@ export default function OverlayView({ children, onClose }) {
                 >
                   {UI_CONTENT.GLOBAL.ACTION_LABEL_OK}
                 </Button>
-                <Button
-                  onClick={handleCancel}
-                  type={Button.TYPE.PLAIN}
-                  spacingType={[
-                    Button.SPACING_TYPE.NONE,
-                    Button.SPACING_TYPE.SMALL,
-                    Button.SPACING_TYPE.NONE,
-                    Button.SPACING_TYPE.NONE,
-                  ]}
-                >
-                  {UI_CONTENT.GLOBAL.ACTION_LABEL_CANCEL}
-                </Button>
+                {showCancel && (
+                  <Button
+                    onClick={handleCancel}
+                    type={Button.TYPE.PLAIN}
+                    spacingType={[
+                      Button.SPACING_TYPE.NONE,
+                      Button.SPACING_TYPE.SMALL,
+                      Button.SPACING_TYPE.NONE,
+                      Button.SPACING_TYPE.NONE,
+                    ]}
+                  >
+                    {UI_CONTENT.GLOBAL.ACTION_LABEL_CANCEL}
+                  </Button>
+                )}
               </StackItem>
             </Stack>
           </StackItem>
@@ -110,3 +127,11 @@ export default function OverlayView({ children, onClose }) {
     modalRoot
   )
 }
+
+Overlay.ALIGN_BUTTONS = {
+  LEFT: 'left',
+  CENTER: 'center',
+  RIGHT: 'right',
+}
+
+export default Overlay

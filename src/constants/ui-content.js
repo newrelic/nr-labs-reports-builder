@@ -27,6 +27,14 @@ export const UI_CONTENT = {
       HEADING: 'Uh-oh! Something is not right.',
       DESCRIPTION: "I couldn't read the application data.",
     },
+    READ_USER_SETTINGS_FAILED: {
+      HEADING: 'Uh-oh! Something is not right.',
+      DESCRIPTION: "I couldn't read the user settings.",
+    },
+    WRITE_USER_SETTINGS_FAILED: {
+      HEADING: 'Uh-oh! Something is not right.',
+      DESCRIPTION: "I couldn't write the user settings.",
+    },
     UNKNOWN_ROUTE: {
       HEADING: 'Uh-oh! Something is not right.',
       DESCRIPTION: "I couldn't find what you were looking for.",
@@ -257,5 +265,13 @@ EMAIL_SUBJECT: Email subject
     FIELD_LABEL_WEBHOOK_URL: 'Webhook URL',
     WEBHOOK_URL_FIELD_PLACEHOLDER:
       'https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX',
+  },
+  SYSTEM_REQUIREMENTS_MODAL: {
+    HEADING: 'System Requirements',
+    DESCRIPTION:
+      'The Reports Builder requires the New Relic Reports engine to schedule and run reports. See the documentation linked below for information on installing and configuring a supported New Relic Reports runtime.',
+    ACTION_LABEL_LEARN_MORE: 'Learn more',
+    ACTION_LABEL_LINK:
+      'https://github.com/newrelic/nr-reports?tab=readme-ov-file#new-relic-reports',
   },
 }
