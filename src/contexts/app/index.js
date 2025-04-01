@@ -7,10 +7,9 @@ import React, {
   useReducer,
 } from 'react'
 import PropTypes from 'prop-types'
-import { nerdlet, NerdletStateContext, PlatformStateContext } from 'nr1'
+import { NerdletStateContext, PlatformStateContext } from 'nr1'
 import { useUserSettingsReader, useUserSettingsWriter } from '../../hooks'
 import { newUserSettings } from '../../model'
-import { UI_CONTENT } from '../../constants'
 
 function reducer(appState, action) {
   switch (action.type) {
@@ -127,16 +126,6 @@ export default function AppProvider({ children }) {
       }),
       [writeUserSettings, appState]
     )
-
-  useMemo(() => {
-    nerdlet.setConfig({
-      actionControls: false,
-      accountPicker: true,
-      headerType: nerdlet.HEADER_TYPE.CUSTOM,
-      headerTitle: UI_CONTENT.GLOBAL.HEADER_TITLE,
-      timePicker: false,
-    })
-  }, [])
 
   useEffect(() => {
     dispatch({ type: 'platformStateChanged', platformState })

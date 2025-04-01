@@ -5,10 +5,11 @@ import React, {
   useMemo,
   useState,
 } from 'react'
-import { Layout, LayoutItem } from 'nr1'
+import { Button, Icon, Layout, LayoutItem, nerdlet } from 'nr1'
 import {
   BusyView,
   ErrorView,
+  HelpModal,
   HomeScreen,
   EditReportScreen,
   EditPublishConfigScreen,
@@ -26,6 +27,7 @@ export default function App() {
     [checkSystemRequirements, setCheckSystemRequirements] = useState(true),
     [showSystemRequirementsModal, setShowSystemRequirementsModal] =
       useState(false),
+    [showHelpModal, setShowHelpModal] = useState(false),
     handleCloseSystemRequirementsModal = useCallback(() => {
       writeUserSettings({
         ...userSettingsState.userSettings,
@@ -33,6 +35,26 @@ export default function App() {
       })
       setShowSystemRequirementsModal(false)
     }, [writeUserSettings, userSettingsState, setShowSystemRequirementsModal])
+
+  useMemo(() => {
+    const actionControlButtons = [
+      {
+        type: Button.TYPE.PRIMARY,
+        label: UI_CONTENT.GLOBAL.BUTTON_LABEL_HELP,
+        iconType: Icon.TYPE.INTERFACE__INFO__HELP,
+        onClick: () => setShowHelpModal(true),
+      },
+    ]
+
+    nerdlet.setConfig({
+      actionControls: true,
+      actionControlButtons,
+      accountPicker: true,
+      headerType: nerdlet.HEADER_TYPE.CUSTOM,
+      headerTitle: UI_CONTENT.GLOBAL.HEADER_TITLE,
+      timePicker: false,
+    })
+  }, [])
 
   const View = useMemo(() => {
     if (userSettingsState.reading || readingStorage) {
@@ -131,6 +153,9 @@ export default function App() {
           writing={userSettingsState.writing}
           onSubmit={handleCloseSystemRequirementsModal}
         />
+      )}
+      {showHelpModal && (
+        <HelpModal isOpen={showHelpModal} setIsOpen={setShowHelpModal} />
       )}
     </div>
   )
