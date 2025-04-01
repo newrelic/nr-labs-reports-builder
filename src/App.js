@@ -1,4 +1,10 @@
-import React, { useContext, useMemo } from 'react'
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { Layout, LayoutItem } from 'nr1'
 import {
   BusyView,
@@ -7,16 +13,29 @@ import {
   EditReportScreen,
   EditPublishConfigScreen,
   EditChannelScreen,
+  SystemRequirementsModal,
 } from './components'
-import { RouteContext, StorageContext } from './contexts'
+import { AppContext, RouteContext, StorageContext } from './contexts'
 import { UI_CONTENT, ROUTES } from './constants'
 
 export default function App() {
   const route = useContext(RouteContext),
-    { reading, readError } = useContext(StorageContext)
+    { writeUserSettings, userSettingsState } = useContext(AppContext),
+    { reading: readingStorage, readError: readStorageError } =
+      useContext(StorageContext),
+    [checkSystemRequirements, setCheckSystemRequirements] = useState(true),
+    [showSystemRequirementsModal, setShowSystemRequirementsModal] =
+      useState(false),
+    handleCloseSystemRequirementsModal = useCallback(() => {
+      writeUserSettings({
+        ...userSettingsState.userSettings,
+        seenSystemRequirements: true,
+      })
+      setShowSystemRequirementsModal(false)
+    }, [writeUserSettings, userSettingsState, setShowSystemRequirementsModal])
 
   const View = useMemo(() => {
-    if (reading) {
+    if (userSettingsState.reading || readingStorage) {
       return (
         <BusyView
           heading={UI_CONTENT.GLOBAL.BUSY.HEADING}
@@ -25,12 +44,32 @@ export default function App() {
       )
     }
 
-    if (readError) {
+    if (userSettingsState.readError) {
+      return (
+        <ErrorView
+          heading={UI_CONTENT.ERRORS.READ_USER_SETTINGS_FAILED.HEADING}
+          description={UI_CONTENT.ERRORS.READ_USER_SETTINGS_FAILED.DESCRIPTION}
+          error={userSettingsState.readError}
+        />
+      )
+    }
+
+    if (userSettingsState.writeError) {
+      return (
+        <ErrorView
+          heading={UI_CONTENT.ERRORS.WRITE_USER_SETTINGS_FAILED.HEADING}
+          description={UI_CONTENT.ERRORS.WRITE_USER_SETTINGS_FAILED.DESCRIPTION}
+          error={userSettingsState.writeError}
+        />
+      )
+    }
+
+    if (readStorageError) {
       return (
         <ErrorView
           heading={UI_CONTENT.ERRORS.READ_FAILED.HEADING}
           description={UI_CONTENT.ERRORS.READ_FAILED.DESCRIPTION}
-          error={readError}
+          error={readStorageError}
         />
       )
     }
@@ -57,13 +96,42 @@ export default function App() {
         description={UI_CONTENT.ERRORS.UNKNOWN_ROUTE.DESCRIPTION}
       />
     )
-  }, [reading, readError, route])
+  }, [userSettingsState, readingStorage, readStorageError, route])
+
+  useEffect(() => {
+    if (!checkSystemRequirements) {
+      return
+    }
+
+    const { userSettings } = userSettingsState
+
+    if (!userSettings) {
+      return
+    }
+
+    if (!userSettings.seenSystemRequirements) {
+      setShowSystemRequirementsModal(true)
+    }
+
+    setCheckSystemRequirements(false)
+  }, [
+    checkSystemRequirements,
+    userSettingsState,
+    setShowSystemRequirementsModal,
+    setCheckSystemRequirements,
+  ])
 
   return (
     <div className="report-builder">
       <Layout className="report-builder-container">
         <LayoutItem>{View}</LayoutItem>
       </Layout>
+      {showSystemRequirementsModal && (
+        <SystemRequirementsModal
+          writing={userSettingsState.writing}
+          onSubmit={handleCloseSystemRequirementsModal}
+        />
+      )}
     </div>
   )
 }
