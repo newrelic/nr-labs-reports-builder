@@ -25,76 +25,35 @@ build scheduled reports that can deliver [dashboard](https://github.com/newrelic
 snapshots or [query](https://github.com/newrelic/nr-reports#query-reports-1)
 results via various [channels](https://github.com/newrelic/nr-reports#channels).
 
-## Installing the New Relic Reports Builder
+## Dependencies
 
-The New Relic Reports Builder is installed and updated using the
-[New Relic One CLI](https://docs.newrelic.com/docs/new-relic-solutions/build-nr-ui/nr1-cli/nr1-common/).
-To install the New Relic Reports Builder, perform the following steps.
+Requires no specific data or additional features.
 
-1. Complete the setup steps in the ["Before you begin](https://docs.newrelic.com/docs/new-relic-solutions/tutorials/build-hello-world-app/#before-you-begin)
-   section of the ["Hello, world!" example](https://docs.newrelic.com/docs/new-relic-solutions/tutorials/build-hello-world-app/).
-1. Open a terminal and execute the following commands to clone this repository
-   and install dependencies.
+## Enabling this App
 
-    ```bash
-    git clone git@github.com:newrelic/nr-labs-reports-builder.git
-    cd nr-labs-reports-builder
-    npm install
-    ```
+This App is available via the New Relic Catalog.
 
-1. Ensure that you are using the correct `nr1` profile by listing the profiles
-   using the command `nr1 profiles:list` and verifying that the desired profile
-   has the string `(default)` listed next to it. If it does not, set the desired
-   profile to the default using the following command, making sure to substitute
-   `<profile-name>` with the name of the desired profile.
+To enable it in your account:
 
-   ```bash
-   nr1 profiles:default -n <profile-name>
-   ```
+1. Go to `Integrations & Agents > Apps and Visualzations` and search for
+   "Reports Builder"
+1. Click the `New Relic Reports Builder` card, and then click the `Add this App`
+   button to add it to your account(s)
+1. Click `Open App` to launch the app (note: on the first time accessing the
+   app, you may be prompted to enable it)
 
-   Alternately, you can use the option `--profile=<profile-name>` in the `nr1`
-   commands listed below to specify the profile that the command should use,
-   for example, `nr1 nerdpack:publish --profile=<profile-name>`.
+Once you have added your accounts, you can also open the app by:
 
-1. Run the following commands
+1. Open the `Apps` left-hand navigation menu item (you may need to click on the
+   `Add More` ellipsis if it doesn't show up by default)
+1. In the `Your Apps` section, locate and click on the
+   `New Relic Reports Builder` card to open the app
 
-   ```bash
-   nr1 nerdpack:uuid -f -g
-   nr1 nerdpack:publish
-   ```
+### Manual Deployment
 
-1. Verify the Reports Builder installed successfully by looking for the success
-   output shown in the ["Publish your Nerdpack"](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/build-nr-apps/publish/#publish-your-nerdpack)
-   section. At this time, it is **important** to note the Nerdpack's ID. The ID
-   will be displayed as the `<ID>` in the message
-   `Tagged <ID> version <version> as STABLE.` This value will be needed when
-   configuring the [Java Scheduler](https://github.com/newrelic/nr-reports#using-the-java-scheduler)
-   or the [New Relic Reports AWS Stack](https://github.com/newrelic/nr-reports#using-the-new-relic-reports-aws-stack)
-   If the `nerdpack:publish` command failed, perform the following steps.
-
-   1. Verify that you have completed the setup steps in the ["Before you begin"](https://docs.newrelic.com/docs/new-relic-solutions/tutorials/build-hello-world-app/#before-you-begin)
-      section of the ["Hello, World!" example](https://docs.newrelic.com/docs/new-relic-solutions/tutorials/build-hello-world-app/).
-   1. [Check your local profile](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/build-nr-apps/publish/#check-your-local-profile)
-   1. [Reveal the Nerdpack information for the New Relic Reports Builder application](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/build-nr-apps/publish/#reveal-your-published-nerdpack-information)
-   1. Review the section ["Resolve issues with accessing your published Nerdpack"](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/build-nr-apps/publish/#resolve-issues-with-accessing-your-published-nerdpack)
-
-   If the problem persists, [contact New Relic support](https://docs.newrelic.com/docs/new-relic-solutions/solve-common-issues/find-help-get-support/).
-
-1. Setup access to the New Relic Reports Builder application by [subscribing accounts to the application](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/build-nr-apps/subscribe/#subscribe-to-a-nerdpack).
-   To learn about what users on your account have the ability to subscribe, read
-   our [permissions documentation](https://docs.newrelic.com/docs/new-relic-solutions/tutorials/manage-app-permissions/).
-
-## Accessing the New Relic Reports Builder
-
-Once the New Relic Reports Builder is published to the New Relic platform
-and subscribed to the appropriate accounts, it can be accessed by performing the
-following steps.
-
-1. From within the New Relic UI, navigate to the "Apps" page.
-1. Expand the section labeled "Your apps" if it is not already expanded.
-1. Locate the application tile named "New Relic Reports Builder" and click on
-   it to launch the New Relic Reports Builder.
-1. Optionally select an account from the top right account picker.
+If you need to customize the app, fork the codebase and follow the instructions
+on how to [Customize a Nerdpack](https://docs.newrelic.com/docs/new-relic-solutions/tutorials/customize-nerdpacks/).
+If you have a change you feel everyone can benefit from, please submit a PR!
 
 ## New Relic Reports Builder and New Relic accounts
 
