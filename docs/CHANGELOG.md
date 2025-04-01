@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/newrelic/nr-labs-reports-builder/compare/v4.0.1...v4.1.0) (2025-04-01)
+
+
+### Features
+
+* add system requirements modal ([2ff5cd2](https://github.com/newrelic/nr-labs-reports-builder/commit/2ff5cd298bdfd86a028188b1edd450259cfc105d))
+
 ## [4.0.1](https://github.com/newrelic/nr-labs-reports-builder/compare/v4.0.0...v4.0.1) (2025-03-28)
 
 
