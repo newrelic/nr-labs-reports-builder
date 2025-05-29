@@ -17,7 +17,7 @@
 # New Relic Reports Builder
 
 The New Relic Reports Builder is a custom [New Relic application](https://docs.newrelic.com/docs/new-relic-solutions/build-nr-ui/build-nr-app/)
-that is designed to work with [New Relic Reports](https://github.com/newrelic/nr-reports)
+that works together with [New Relic Reports](https://github.com/newrelic/nr-reports)
 to provide a full end-to-end scheduled reporting solution. It is built with the
 [New Relic SDK components](https://docs.newrelic.com/docs/new-relic-solutions/build-nr-ui/sdk-component/intro-to-sdk/)
 to provide a user interface running in the New Relic UI that allows you to
@@ -27,7 +27,10 @@ results via various [channels](https://github.com/newrelic/nr-reports#channels).
 
 ## Dependencies
 
-Requires no specific data or additional features.
+The New Relic Reports Builder _must_ be used in combination with one of the
+[New Relic Reports](https://github.com/newrelic/nr-reports) runtimes, either the
+New Relic Reports [Java Scheduler](https://github.com/newrelic/nr-reports/tree/main?tab=readme-ov-file#using-the-java-scheduler)
+or the [New Relic Reports AWS Stack](https://github.com/newrelic/nr-reports/tree/main?tab=readme-ov-file#using-the-new-relic-reports-aws-stack).
 
 ## Enabling this App
 
