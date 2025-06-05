@@ -17,14 +17,18 @@ function createModalRoot() {
 
 function Overlay({
   children,
+  className = '',
   showCancel = true,
   loading = false,
   alignButtons = Overlay.ALIGN_BUTTONS.CENTER,
+  okEnabled = true,
+  cancelEnabled = true,
   onSubmit,
   onCancel,
 }) {
   const modalRoot = useMemo(() => createModalRoot(), []),
     overlayContentRef = useRef(),
+    classNames = ['overlay', className].join(' '),
     handleSubmit = useCallback(() => {
       onSubmit()
     }, [onSubmit]),
@@ -72,7 +76,7 @@ function Overlay({
   }, [setupHandlers, cleanupHandlers, overlayContentRef])
 
   return createPortal(
-    <div className="overlay">
+    <div className={classNames}>
       <div className="overlay-backdrop"></div>
       <div className="overlay-content" ref={overlayContentRef}>
         <Stack
@@ -95,6 +99,7 @@ function Overlay({
                   onClick={handleSubmit}
                   type={Button.TYPE.PRIMARY}
                   loading={loading}
+                  disabled={!okEnabled}
                   spacingType={[
                     Button.SPACING_TYPE.NONE,
                     Button.SPACING_TYPE.SMALL,
@@ -108,6 +113,7 @@ function Overlay({
                   <Button
                     onClick={handleCancel}
                     type={Button.TYPE.PLAIN}
+                    disabled={!cancelEnabled}
                     spacingType={[
                       Button.SPACING_TYPE.NONE,
                       Button.SPACING_TYPE.SMALL,

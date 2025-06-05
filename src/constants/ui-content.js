@@ -298,9 +298,13 @@ EMAIL_SUBJECT: Email subject
       'https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX',
   },
   SYSTEM_REQUIREMENTS_MODAL: {
-    HEADING: 'System Requirements',
+    HEADING: 'Before you continue',
     DESCRIPTION:
       'The Reports Builder requires the New Relic Reports engine to schedule and run reports. See the documentation linked below for information on installing and configuring a supported New Relic Reports runtime.',
+    PROMPT_LABEL:
+      'To acknowledge this requirement, please enter the following text in the box below:',
+    INVALID_PROMPT_MESSAGE: 'Acknowledgement is required',
+    PROMPT: 'I need to install a New Relic Reports runtime',
     ACTION_LABEL_LEARN_MORE: 'Learn more',
     ACTION_LABEL_LINK:
       'https://github.com/newrelic/nr-reports?tab=readme-ov-file#new-relic-reports',
