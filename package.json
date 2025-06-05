@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "nr-labs-reports-builder",
-  "version": "4.2.0",
+  "version": "4.3.0",
   "description": "New Relic Reports Builder is used to build reports for use with New Relic Reports.",
   "scripts": {
     "start": "nr1 nerdpack:serve",

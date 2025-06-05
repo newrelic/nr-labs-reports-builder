@@ -1,3 +1,10 @@
+# [4.3.0](https://github.com/newrelic/nr-labs-reports-builder/compare/v4.2.0...v4.3.0) (2025-06-05)
+
+
+### Features
+
+* update system requirements modal to require acknowledgement by entering a prompt ([d549a11](https://github.com/newrelic/nr-labs-reports-builder/commit/d549a1111c7c49800019a24cddf19ae764285cc4))
+
 # [4.2.0](https://github.com/newrelic/nr-labs-reports-builder/compare/v4.1.0...v4.2.0) (2025-04-01)
 
 
