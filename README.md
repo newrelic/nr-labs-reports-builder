@@ -25,7 +25,7 @@ build scheduled reports that can deliver [dashboard](https://github.com/newrelic
 snapshots or [query](https://github.com/newrelic/nr-reports#query-reports-1)
 results via various [channels](https://github.com/newrelic/nr-reports#channels).
 
-## New Relic Reports has been DEPRECATED. To build and send email reports, use [Scheduled Search](https://docs.newrelic.com/docs/nrql/using-nrql/schedule-nrql-searches/) and [Workflow Actions](https://docs.newrelic.com/docs/workflow-automation/setup-and-configure/actions-catalog/newrelic/notification/newrelic-notification-sendemail/).
+## New Relic Reports Builder has been DEPRECATED. To build and send email reports, use [Scheduled Search](https://docs.newrelic.com/docs/nrql/using-nrql/schedule-nrql-searches/) and [Workflow Actions](https://docs.newrelic.com/docs/workflow-automation/setup-and-configure/actions-catalog/newrelic/notification/newrelic-notification-sendemail/).
 
 ## Dependencies
 
